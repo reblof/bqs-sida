@@ -1,6 +1,19 @@
 body {
     background-color: #ffcc33;
+    padding: 0;
+    margin: 0;
+}
+.main-section {
+    max-width: 1240px;
+    margin: 0 auto;
 }
 h1 {
     font-family: "Arial", sans-serif;
+}
+.col-2 {
+    display: flex;
+}
+.col-2 img {
+    width: 50%;
+    height: auto;
 }
