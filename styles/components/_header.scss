@@ -26,6 +26,13 @@ header {
             border: none;
             display: block;
             margin-left: auto;
+            &:focus,
+            &:focus-within {
+                background-color: red;
+                & + ul {
+                    right: 0;
+                }
+            }
             span {
                 &:not(.menutext){
                     width: 30px;
@@ -57,22 +64,27 @@ header {
             background-color: $bkg;
             padding: 1rem;
             list-style-type: none;
-            padding: 0;
             margin: 0;
-            // justify-content: flex-end;
-            // li {
-            //     a {
-            //         font-weight: 600;
-            //         color: $black;
-            //         padding: 1rem;
-            //         text-decoration: none;
-            //         &:hover,
-            //         &:focus {
-            //             border-bottom: 1px dashed $black;
-            //             outline: none;
-            //         }
-            //     }
-            // }
+            height: 100%;
+            flex-direction: column;
+            &:focus,
+            &:focus-within {
+                right: 0;
+            }
+            li {
+                a {
+                    font-weight: 600;
+                    color: $black;
+                    padding: 1rem;
+                    text-decoration: none;
+                    display: block;
+                    &:hover,
+                    &:focus {
+                        border-bottom: 1px dashed $black;
+                        outline: none;
+                    }
+                }
+            }
         }
     }
 }
