@@ -1,0 +1,10 @@
+h1 {
+    font-family: $main;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 1rem;
+    @media( min-width: $small ){
+        font-size: 2rem;
+    }
+}

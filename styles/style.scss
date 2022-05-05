@@ -1,0 +1,19 @@
+
+@import "base/variables";
+@import "base/normalize";
+@import "base/typography";
+
+@import "utilities/utilities";
+
+@import "components/header";
+@import "components/articles";
+
+
+
+
+section {
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+

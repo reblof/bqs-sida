@@ -2,27 +2,32 @@
 <html>
     <head>
         <title>BQ's nya sida</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="https://use.typekit.net/mvy6kli.css">
     </head>
     <body>
-        <header>
-            <h1>BQ's nya sida</h1>
-            <p>Testar med röd bkg.</p>
+        <header class="u-flex u-col-2">
+            <h1>BQ's kunskapsblogg</h1>
+            <nav class="main-nav">
+                <ul class="u-flex">
+                    <li><a href="#">Artiklar</a></li>
+                    <li><a href="#">Om BQ</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
             <section class="main-section">
-                <div class="col-2">
+                <div class="u-flex u-col-2">
                     <img src="images/magnolia.jpg" alt="Magnoliaträd i blom!" />
                     <img src="images/orange-blomma.jpg" alt="En orange blomma som jag inte kan namnet på." />
                 </div>
             </section>
             <section class="articles-section">
-                <div class="col-1 align-center">
+                <div class="u-align-center">
                     <h2>Artiklar</h2>
                     <p>Här skriver jag artiklar som handlar om saker jag har lärt mig.</p>
                 </div>
-                <div class="col-2">
+                <div class="u-flex u-col-2">
                     <article id="art-1">
                         <a href="#">
                             <h3>Artikelns rubrik</h3>

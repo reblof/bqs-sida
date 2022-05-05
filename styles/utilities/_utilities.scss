@@ -1,0 +1,22 @@
+.u-align-center {
+    text-align: center;
+}
+
+.u-flex {
+    display: flex;
+}
+
+@for $i from 1 through 4 {
+    .u-col-#{$i} {
+        > * {
+            width: calc(100%/#{$i});
+        }
+    }
+}
+
+
+// .col-2 img,
+// .col-2 article {
+//     width: 50%;
+//     height: auto;
+// }
