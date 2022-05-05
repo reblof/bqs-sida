@@ -17,74 +17,127 @@ header {
             font-size: 1rem;
         }
     }
-    .main-nav {
-        width: auto;
+}
+
+.main-nav {
+    width: auto;
+    &:focus,
+    &:focus-within {
         .open-nav {
-            position: relative;
-            height: 50px;
-            background: transparent;
-            border: none;
-            display: block;
-            margin-left: auto;
-            &:focus,
-            &:focus-within {
-                background-color: red;
-                & + ul {
-                    right: 0;
-                }
+            background-color: red;
+            & + ul {
+                right: 0;
             }
             span {
                 &:not(.menutext){
-                    width: 30px;
-                    height: 3px;
-                    background-color: $black;
-                    position: absolute;
-                    bottom: 14.5px;
-                    right: 0;
-                    border-radius: 5px;
+                    transform: rotate(45deg);
+                    bottom: 23.5px;
                     & + span:not(.menutext) {
-                        bottom: 23.5px;
+                        left: 100px;
+                        right: auto;
                         & + span:not(.menutext) {
-                            bottom: 32.5px;
+                            bottom: 23.5px;
+                            right: 0;
+                            transform: rotate(-45deg);
                         }
                     }
                 }
-                &.menutext {
-                    padding-right: 40px;
-                    font-family: $main;
-                    font-weight: 600;
-                    text-transform: uppercase;
-                }
             }
         }
-        ul {
-            position: fixed;
-            right: -100%;
-            width: 350px;
-            background-color: $bkg;
-            padding: 1rem;
-            list-style-type: none;
-            margin: 0;
-            height: 100%;
-            flex-direction: column;
-            &:focus,
-            &:focus-within {
+        & + .close-nav {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+    .open-nav {
+        position: relative;
+        height: 50px;
+        background: transparent;
+        border: none;
+        display: block;
+        margin-left: auto;
+        overflow: hidden;
+        // &:focus,
+        // &:focus-within {
+        //     background-color: red;
+        //     & + ul {
+        //         right: 0;
+        //     }
+        //     span {
+        //         &:not(.menutext){
+        //             transform: rotate(45deg);
+        //             bottom: 23.5px;
+        //             & + span:not(.menutext) {
+        //                 right: 100px;
+        //                 & + span:not(.menutext) {
+        //                     bottom: 23.5px;
+        //                     right: 0;
+        //                     transform: rotate(-45deg);
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+        span {
+            @include transition();
+            &:not(.menutext){
+                width: 30px;
+                height: 3px;
+                background-color: $black;
+                position: absolute;
+                bottom: 14.5px;
                 right: 0;
-            }
-            li {
-                a {
-                    font-weight: 600;
-                    color: $black;
-                    padding: 1rem;
-                    text-decoration: none;
-                    display: block;
-                    &:hover,
-                    &:focus {
-                        border-bottom: 1px dashed $black;
-                        outline: none;
+                border-radius: 5px;
+                & + span:not(.menutext) {
+                    bottom: 23.5px;
+                    & + span:not(.menutext) {
+                        bottom: 32.5px;
                     }
                 }
             }
+            &.menutext {
+                padding-right: 40px;
+                font-family: $main;
+                font-weight: 600;
+                text-transform: uppercase;
+            }
         }
+    }
+    ul {
+        position: fixed;
+        right: -100%;
+        width: 100%;
+        background-color: $bkg;
+        padding: 1rem;
+        list-style-type: none;
+        margin: 0;
+        height: 100%;
+        flex-direction: column;
+        @include transition();
+        &:focus,
+        &:focus-within {
+            right: 0;
+        }
+        li {
+            a {
+                font-weight: 600;
+                color: $black;
+                padding: 1rem;
+                text-decoration: none;
+                display: block;
+                &:hover,
+                &:focus {
+                    border-bottom: 1px dashed $black;
+                    outline: none;
+                }
+            }
+        }
+    }
+    & + .close-nav {
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        width: 50px;
+        pointer-events: none;
     }
 }

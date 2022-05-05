@@ -11,3 +11,11 @@ $small: 800px;
 
 // Widths
 $site-width: 1240px;
+
+// Animation
+@mixin transition($speed: 0.5s,$timing: ease-in-out,$property: all) {
+    -webkit-transition: $speed $timing $property;
+    -moz-transition: $speed $timing $property;
+    -o-transition: $speed $timing $property;
+    transition: $speed $timing $property;
+}

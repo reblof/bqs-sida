@@ -9,7 +9,7 @@ body {
   font-family: "rigid-square", sans-serif;
   font-weight: 300;
 }
-body > * {
+body * {
   box-sizing: border-box;
 }
 
@@ -439,24 +439,49 @@ header h1 {
     font-size: 1rem;
   }
 }
-header .main-nav {
+
+.main-nav {
   width: auto;
 }
-header .main-nav .open-nav {
+.main-nav:focus .open-nav, .main-nav:focus-within .open-nav {
+  background-color: red;
+}
+.main-nav:focus .open-nav + ul, .main-nav:focus-within .open-nav + ul {
+  right: 0;
+}
+.main-nav:focus .open-nav span:not(.menutext), .main-nav:focus-within .open-nav span:not(.menutext) {
+  transform: rotate(45deg);
+  bottom: 23.5px;
+}
+.main-nav:focus .open-nav span:not(.menutext) + span:not(.menutext), .main-nav:focus-within .open-nav span:not(.menutext) + span:not(.menutext) {
+  left: 100px;
+  right: auto;
+}
+.main-nav:focus .open-nav span:not(.menutext) + span:not(.menutext) + span:not(.menutext), .main-nav:focus-within .open-nav span:not(.menutext) + span:not(.menutext) + span:not(.menutext) {
+  bottom: 23.5px;
+  right: 0;
+  transform: rotate(-45deg);
+}
+.main-nav:focus + .close-nav, .main-nav:focus-within + .close-nav {
+  opacity: 1;
+  pointer-events: all;
+}
+.main-nav .open-nav {
   position: relative;
   height: 50px;
   background: transparent;
   border: none;
   display: block;
   margin-left: auto;
+  overflow: hidden;
 }
-header .main-nav .open-nav:focus, header .main-nav .open-nav:focus-within {
-  background-color: red;
+.main-nav .open-nav span {
+  -webkit-transition: 0.5s ease-in-out all;
+  -moz-transition: 0.5s ease-in-out all;
+  -o-transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
-header .main-nav .open-nav:focus + ul, header .main-nav .open-nav:focus-within + ul {
-  right: 0;
-}
-header .main-nav .open-nav span:not(.menutext) {
+.main-nav .open-nav span:not(.menutext) {
   width: 30px;
   height: 3px;
   background-color: #000;
@@ -465,42 +490,53 @@ header .main-nav .open-nav span:not(.menutext) {
   right: 0;
   border-radius: 5px;
 }
-header .main-nav .open-nav span:not(.menutext) + span:not(.menutext) {
+.main-nav .open-nav span:not(.menutext) + span:not(.menutext) {
   bottom: 23.5px;
 }
-header .main-nav .open-nav span:not(.menutext) + span:not(.menutext) + span:not(.menutext) {
+.main-nav .open-nav span:not(.menutext) + span:not(.menutext) + span:not(.menutext) {
   bottom: 32.5px;
 }
-header .main-nav .open-nav span.menutext {
+.main-nav .open-nav span.menutext {
   padding-right: 40px;
   font-family: "rigid-square", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
 }
-header .main-nav ul {
+.main-nav ul {
   position: fixed;
   right: -100%;
-  width: 350px;
+  width: 100%;
   background-color: #ffcc33;
   padding: 1rem;
   list-style-type: none;
   margin: 0;
   height: 100%;
   flex-direction: column;
+  -webkit-transition: 0.5s ease-in-out all;
+  -moz-transition: 0.5s ease-in-out all;
+  -o-transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
-header .main-nav ul:focus, header .main-nav ul:focus-within {
+.main-nav ul:focus, .main-nav ul:focus-within {
   right: 0;
 }
-header .main-nav ul li a {
+.main-nav ul li a {
   font-weight: 600;
   color: #000;
   padding: 1rem;
   text-decoration: none;
   display: block;
 }
-header .main-nav ul li a:hover, header .main-nav ul li a:focus {
+.main-nav ul li a:hover, .main-nav ul li a:focus {
   border-bottom: 1px dashed #000;
   outline: none;
+}
+.main-nav + .close-nav {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  width: 50px;
+  pointer-events: none;
 }
 
 article {
