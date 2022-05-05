@@ -4,12 +4,19 @@
         <title>BQ's nya sida</title>
         <link rel="stylesheet" href="styles/style.css">
         <link rel="stylesheet" href="https://use.typekit.net/mvy6kli.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         <header class="u-flex u-col-2">
             <h1>BQ's kunskapsblogg</h1>
             <nav class="main-nav">
-                <ul class="u-flex">
+                <button type="button" class="open-nav" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="menutext">Meny</span>
+                </button>
+                <ul class="u-flex" aria-hidden="true">
                     <li><a href="#">Artiklar</a></li>
                     <li><a href="#">Om BQ</a></li>
                 </ul>
@@ -17,7 +24,7 @@
         </header>
         <main>
             <section class="main-section">
-                <div class="u-flex u-col-2">
+                <div class="u-flex u-col-2 u-m-col-2">
                     <img src="images/magnolia.jpg" alt="Magnoliaträd i blom!" />
                     <img src="images/orange-blomma.jpg" alt="En orange blomma som jag inte kan namnet på." />
                 </div>
