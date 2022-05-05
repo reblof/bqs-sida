@@ -9,18 +9,14 @@
 @for $i from 1 through 4 {
     .u-col-#{$i} {
         > * {
-            width: 100%;
-            @media(min-width: $small){
-                width: calc(100%/#{$i});
-            }
+            width: calc(100%/#{$i});
         }
     }
 }
 
-.u-m-col-2 {
-    > * {
-        @media(max-width: $small){
-            width: 50%;
-        }
-    }
-}
+
+// .col-2 img,
+// .col-2 article {
+//     width: 50%;
+//     height: auto;
+// }
