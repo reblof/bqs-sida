@@ -1,14 +1,35 @@
+::root {
+    font-size: 16px;
+}
+
 body {
     background-color: #ffcc33;
     padding: 0;
     margin: 0;
+    font-family: "rigid-square",sans-serif;
+    font-weight: 300;
+}
+header {
+    text-align: center;
+    padding: 1rem 0;
+    z-index: 10;
+    position: relative;
+}
+
+header p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .main-section {
     max-width: 1240px;
     margin: 0 auto;
 }
 h1 {
-    font-family: "Arial", sans-serif;
+    font-family: "rigid-square",sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 2rem;
 }
 .col-2 {
     display: flex;
@@ -16,4 +37,8 @@ h1 {
 .col-2 img {
     width: 50%;
     height: auto;
+}
+
+.align-center {
+    text-align: center;
 }
