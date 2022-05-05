@@ -20,7 +20,7 @@ header p {
     margin-top: 0;
     margin-bottom: 0;
 }
-.main-section {
+section {
     max-width: 1240px;
     margin: 0 auto;
 }
@@ -34,7 +34,8 @@ h1 {
 .col-2 {
     display: flex;
 }
-.col-2 img {
+.col-2 img,
+.col-2 article {
     width: 50%;
     height: auto;
 }
