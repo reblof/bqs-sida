@@ -1,2 +1,5 @@
 # ignore VS code workspace
 *.code-workspace
+
+# ignore tasks
+tasks.json
