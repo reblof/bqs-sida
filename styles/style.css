@@ -443,9 +443,6 @@ header h1 {
 .main-nav {
   width: auto;
 }
-.main-nav:focus .open-nav, .main-nav:focus-within .open-nav {
-  background-color: red;
-}
 .main-nav:focus .open-nav + ul, .main-nav:focus-within .open-nav + ul {
   right: 0;
 }
@@ -533,10 +530,12 @@ header h1 {
 }
 .main-nav + .close-nav {
   position: absolute;
-  right: 0;
+  right: calc(1rem + 40px);
   opacity: 0;
-  width: 50px;
+  width: 60px;
   pointer-events: none;
+  background-color: #ffcc33;
+  border: 0;
 }
 
 article {

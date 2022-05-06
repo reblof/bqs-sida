@@ -24,7 +24,6 @@ header {
     &:focus,
     &:focus-within {
         .open-nav {
-            background-color: red;
             & + ul {
                 right: 0;
             }
@@ -57,27 +56,6 @@ header {
         display: block;
         margin-left: auto;
         overflow: hidden;
-        // &:focus,
-        // &:focus-within {
-        //     background-color: red;
-        //     & + ul {
-        //         right: 0;
-        //     }
-        //     span {
-        //         &:not(.menutext){
-        //             transform: rotate(45deg);
-        //             bottom: 23.5px;
-        //             & + span:not(.menutext) {
-        //                 right: 100px;
-        //                 & + span:not(.menutext) {
-        //                     bottom: 23.5px;
-        //                     right: 0;
-        //                     transform: rotate(-45deg);
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
         span {
             @include transition();
             &:not(.menutext){
@@ -135,9 +113,11 @@ header {
     }
     & + .close-nav {
         position: absolute;
-        right: 0;
+        right: calc(1rem + 40px);
         opacity: 0;
-        width: 50px;
+        width: 60px;
         pointer-events: none;
+        background-color: $bkg;
+        border: 0;
     }
 }
