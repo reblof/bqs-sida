@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>En djupdykning i CLAMP | BQ's nya sida</title>
-        <link rel="stylesheet" href="styles/style.css">
+        <title>En djupdykning i clamp | BQ's nya sida</title>
+        <link rel="stylesheet" href="../styles/style.css">
         <link rel="stylesheet" href="https://use.typekit.net/mvy6kli.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="../main.js" defer></script>
     </head>
     <body>
         <header class="u-flex u-col-2">
-            <h1>En djupdykning i CLAMP</h1>
+            <a class="logo" href="../index.html">BQ's kunskapsblogg</a>
             <nav class="main-nav">
                 <button type="button" class="btn open-nav" aria-expanded="false">
                     <span></span>
@@ -26,33 +28,36 @@
             <span class="menutext">Stäng</span>
         </button>
         <main>
-            <section class="main-section">
-                <div class="u-flex u-col-2 u-m-col-2">
-                    <img src="images/magnolia.jpg" alt="Magnoliaträd i blom!" />
-                    <img src="images/orange-blomma.jpg" alt="En orange blomma som jag inte kan namnet på." />
+            <section class="blog-post u-align-center">
+                <div class="meta"><date>2 jun 2022</date><span class="author">Skrivet av: Rebecca</span></div>
+                <h1>En djupdykning i clamp</h1>
+                <p>Fakta: om din katt har över 3 ränder, så är den egentligen en tiger. <br />Fyll i hur många ränder din katt har, och ta reda på vilket djur den verkligen är.</p><br />
+                <fieldset class="u-text-width">
+                    <label for="stripes">Hur många ränder har din katt?</label>
+                    <input type="number" id="stripes" min="0" max="100">
+                </fieldset>
+                <div class="u-flex u-f-justify-center u-flex-3 u-text-width">
+                    <num style="--num:0"></num>
                 </div>
-            </section>
-            <section class="articles-section">
-                <div class="u-align-center">
-                    <h2>Artiklar</h2>
-                    <p>Här skriver jag artiklar som handlar om saker jag har lärt mig.</p>
-                </div>
-                <div class="u-flex u-col-2">
-                    <article id="art-1">
-                        <a href="#">
-                            <h3>Artikelns rubrik</h3>
-                            <p>Detta är en liten preview av texten i artikeln.</p>
-                            <span class="button">Läs inlägget</span>
-                        </a>
-                    </article>
-                    <article id="art-2">
-                        <a href="#">
-                            <h3>Artikelns rubrik</h3>
-                            <p>Detta är en liten preview av texten i artikeln.</p>
-                            <span class="button">Läs inlägget</span>
-                        </a>
-                    </article>
-                </div>
+                <h3 class="u-align-left">(The important) (S)CSS:</h3>
+                <pre class="u-align-left">
+                    <code>
+                        num {
+                            --s: clamp(0%,(var(--num) - 3) * 99%, 100%);
+                            
+                            &:before {
+                                counter-reset: num var(--num);
+                                content: counter(num);
+                            }
+                            
+                            &:after {
+                                content: "";
+                                background: url(../images/cats-sprite.png) var(--s) 0;
+                                background-repeat: no-repeat;
+                            }
+                        }
+                    </code>
+                </pre>
             </section>
         </main>
     </body>

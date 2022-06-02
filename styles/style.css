@@ -101,14 +101,6 @@ abbr[title] {
 }
 
 /**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
-b,
-strong {
-  font-weight: bolder;
-}
-
-/**
  * 1. Correct the inheritance and scaling of font size in all browsers.
  * 2. Correct the odd `em` font sizing in all browsers.
  */
@@ -365,12 +357,43 @@ h1 {
   }
 }
 
+label {
+  font-weight: bold;
+  display: block;
+  text-align: left;
+}
+
+input {
+  min-height: 40px;
+  border-radius: 4px;
+  border: 2px solid #000;
+  width: 100%;
+  padding: 0 0.5rem;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
 .u-align-center {
   text-align: center;
 }
 
+.u-align-left {
+  text-align: left;
+}
+
+.u-align-right {
+  text-align: right;
+}
+
 .u-flex {
   display: flex;
+}
+
+.u-f-justify-center {
+  justify-content: center;
 }
 
 .u-col-1 > * {
@@ -415,6 +438,12 @@ h1 {
   }
 }
 
+.u-text-width, num {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
 header {
   padding: 0.5rem 1rem;
   max-width: 1240px;
@@ -437,11 +466,17 @@ header p {
   margin-top: 0;
   margin-bottom: 0;
 }
-header h1 {
+header h1,
+header .logo {
   font-size: 1rem;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
 }
 @media (min-width: 800px) {
-  header h1 {
+  header h1,
+header .logo {
     font-size: 1rem;
   }
 }
@@ -606,13 +641,12 @@ header + .close-nav {
   }
 }
 
-article {
-  padding: 1rem;
-  border: 2px dashed;
-}
 article a {
   text-decoration: none;
   color: black;
+  padding: 1rem;
+  border: 2px dashed;
+  display: block;
 }
 
 .button,
@@ -621,6 +655,61 @@ article a {
   font-family: "rigid-square", sans-serif;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+num {
+  background-color: pink;
+  border-radius: 4px;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  --s: clamp(0%,(var(--num) - 3) * 99%, 100%);
+}
+num:before {
+  counter-reset: num var(--num);
+  content: counter(num);
+}
+num:after {
+  content: "";
+  width: 47px;
+  height: 50px;
+  display: block;
+  background: url(../images/cats-sprite.png) var(--s) 0;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+num span {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.blog-post {
+  background-color: #fff;
+  padding: 1.5rem;
+}
+@media (min-width: 800px) {
+  .blog-post {
+    padding: 4rem;
+  }
+}
+.blog-post h1, .blog-post h2, .blog-post h3, .blog-post p {
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.blog-post .meta {
+  font-size: 0.8rem;
+}
+.blog-post .meta > * {
+  margin: 0px 0.5rem;
+  background: pink;
+  color: #000;
+  padding: 0.2rem;
+  border-radius: 2px;
 }
 
 section {
