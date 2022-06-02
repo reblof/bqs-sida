@@ -2,13 +2,16 @@
 @import "base/variables";
 @import "base/normalize";
 @import "base/typography";
+@import "base/forms";
 
 @import "utilities/utilities";
 
 @import "components/header";
 @import "components/articles";
 @import "components/buttons";
+@import "components/num";
 
+@import "pages/blog";
 
 
 section {
