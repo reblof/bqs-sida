@@ -616,28 +616,31 @@ header + .close-nav {
   padding: 1rem;
   text-decoration: none;
   display: block;
+  position: relative;
 }
 @media (min-width: 1000px) {
-  .main-nav ul li a:after {
+  .main-nav ul li a:before {
     content: "";
-    width: 0px;
-    height: 0px;
-    background-color: #fff;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
     border-radius: 50%;
     position: absolute;
     left: 50%;
     top: 50%;
+    margin: -5px;
     transform-origin: center;
-    -webkit-transition: 0.5s ease-in-out all;
-    -moz-transition: 0.5s ease-in-out all;
-    -o-transition: 0.5s ease-in-out all;
-    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+    -webkit-transition: 2s ease transform;
+    -moz-transition: 2s ease transform;
+    -o-transition: 2s ease transform;
+    transition: 2s ease transform;
   }
 }
 @media (min-width: 1000px) {
-  .main-nav ul li a:hover:after {
-    width: 200px;
-    height: 200px;
+  .main-nav ul li a:hover:before {
+    transform: scale(1000);
+    background-color: #fff;
   }
 }
 
