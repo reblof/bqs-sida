@@ -157,25 +157,28 @@ header {
                 padding: 1rem;
                 text-decoration: none;
                 display: block;
-                &:after {
+                position: relative;
+                &:before {
                     @media( min-width: $medium ){
                         content: "";
-                        width: 0px;
-                        height: 0px;
-                        background-color: $secondary;
+                        width: 10px;
+                        height: 10px;
+                        background-color: transparent;
                         border-radius: 50%;
                         position: absolute;
                         left: 50%;
                         top: 50%;
+                        margin: -5px;
                         transform-origin: center;
-                        @include transition();
+                        pointer-events: none;
+                        @include transition(2s,ease,transform);
                     }
                 }
                 &:hover {
-                    &:after {
+                    &:before {
                         @media( min-width: $medium ){
-                            width: 200px;
-                            height: 200px;
+                            transform: scale(1000);
+                            background-color: $secondary;
                         }
                     }
                 }
