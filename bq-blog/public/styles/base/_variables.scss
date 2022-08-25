@@ -1,0 +1,27 @@
+// Colors
+$bkg: #fff;
+$black: #000;
+$secondary: #FDF8D7;
+$contrast: #FCE8F3;
+$gray: #6f6c6c;
+
+
+// Type
+$font-main: "de-walpergens-pica",sans-serif;
+$font-contrast: "de-walpergens-pica-sc",sans-serif;
+$font-rigid: rigid-square, sans-serif;
+
+// Breakpoints
+$small: 800px;
+$medium: 1000px;
+
+// Widths
+$site-width: 1240px;
+
+// Animation
+@mixin transition($speed: 0.5s,$timing: ease-in-out,$property: all) {
+    -webkit-transition: $speed $timing $property;
+    -moz-transition: $speed $timing $property;
+    -o-transition: $speed $timing $property;
+    transition: $speed $timing $property;
+}

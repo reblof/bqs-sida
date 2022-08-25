@@ -1,11 +1,14 @@
 // Colors
-$bkg: #ffcc33;
+$bkg: #fff;
 $black: #000;
-$secondary: #fff;
-$contrast: pink;
+$secondary: #FDF8D7;
+$contrast: #FCE8F3;
+$gray: rgba(41, 41, 41, 1);
+
 
 // Type
-$main: "rigid-square",sans-serif;
+$font-main: "de-walpergens-pica",sans-serif;
+$font-contrast: "de-walpergens-pica-sc",sans-serif;
 
 // Breakpoints
 $small: 800px;
