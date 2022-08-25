@@ -377,7 +377,7 @@ p {
 }
 article p {
   font-size: 1.2rem;
-  color: #626262;
+  color: rgb(41, 41, 41);
 }
 
 label {

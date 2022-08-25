@@ -1,0 +1,24 @@
+.blog-post {
+    background-color: $secondary;
+    padding: 1.5rem;
+    @media(min-width: $small){
+        padding: 4rem;
+    }
+
+    h1,h2,h3,p {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .meta {
+        font-size: 0.8rem;
+        > * {
+            margin: 0px 0.5rem;
+            background: $contrast;
+            color: $black;
+            padding: 0.2rem;
+            border-radius: 2px;
+        }
+    }
+}
