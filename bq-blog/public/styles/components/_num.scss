@@ -1,0 +1,30 @@
+num {
+    @extend .u-text-width;
+    background-color: $contrast;
+    border-radius: 4px;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 2rem;
+    font-weight: bold;
+    --s: clamp(0%,(var(--num) - 3) * 99%, 100%);
+    &:before {
+        counter-reset: num var(--num);
+        content: counter(num);
+    }
+    &:after {
+        content: "";
+        width: calc(94px /2);
+        height: 50px;
+        display: block;
+        background: url(../images/cats-sprite.png) var(--s) 0;
+        background-repeat: no-repeat;
+        margin: 0 auto;
+    }
+    span {
+        display: block;
+        font-size: 0.8rem;
+        font-weight: normal;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
