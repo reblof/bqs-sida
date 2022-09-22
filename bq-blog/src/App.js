@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import './App.css';
-import Parser from './Parser';
+import Parser from './components/Parser';
 
 function App () {
   return (
