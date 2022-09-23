@@ -1,0 +1,26 @@
+footer {
+    background-color: $contrast;
+    padding: $space-xs;
+    @media(min-width: $small){
+        padding: $space-m;
+    }
+    .footer-inner {
+        max-width: $site-width;
+        margin: 0 auto;
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            padding-bottom: $space-xxs;
+        }
+    }
+    p {
+        margin: 0 0 $space-xxs 0;
+        color: $black
+    }
+    a {
+        color: $black;
+    }
+}

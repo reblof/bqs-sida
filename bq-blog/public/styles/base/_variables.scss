@@ -18,6 +18,13 @@ $medium: 1000px;
 // Widths
 $site-width: 1240px;
 
+// Spacings
+$space-xxs: 6px;
+$space-xs: 16px;
+$space-s: 24px;
+$space-m: 40px;
+$space-l: 80px;
+
 // Animation
 @mixin transition($speed: 0.5s,$timing: ease-in-out,$property: all) {
     -webkit-transition: $speed $timing $property;
